@@ -58,8 +58,8 @@ with tf.device('/gpu:0'):
     #model.add(Dropout(0.1))
     model.add(Dense(1,activation='sigmoid'))
     #conv_base.trainable=False
-    #model.compile(loss='binary_crossentropy',optimizer=sgd, metrics=['accuracy'])
-    model.compile(loss='binary_crossentropy',optimizer=new_opt, metrics=['accuracy'])
+    model.compile(loss='binary_crossentropy',optimizer=sgd, metrics=['accuracy'])
+    #model.compile(loss='binary_crossentropy',optimizer=new_opt, metrics=['accuracy'])
     #model.compile(loss='binary_crossentropy',optimizer=rms, metrics=['accuracy'])
     history = model.fit_generator(train_generator, steps_per_epoch=100, epochs=42, validation_data=validation_generator, validation_steps=24)
         #accuracy
